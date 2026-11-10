@@ -4,180 +4,241 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agua Del Páramo | Agua de mesa en Lambayeque</title>
-<meta name="description" content="Agua de mesa garantizada. Bidones, cajas y botellones con entrega a domicilio en toda Lambayeque.">
+<meta name="description" content="Agua de mesa ozonizada y purificada. Bidones, cajas y botellones con delivery sin costo en toda Lambayeque.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
 <style>
-/* ===== Colores tomados del logo ===== */
+/* ===== IDENTIDAD VISUAL (cambia colores aquí) ===== */
 :root{
-  --azul:#0b3d9e; --celeste:#0a84d6; --verde:#77bc4a;
-  --fondo:#f4f9ff; --texto:#17254a; --blanco:#fff;
+  --azul:#0b3d9e; --noche:#0a1f4d; --celeste:#0a84d6; --hielo:#eef6ff;
+  --verde:#77bc4a; --verde-o:#3f7d22; --rojo:#d62839; --tx:#16264d; --gris:#5a6a8f;
+  --titulo:'Fraunces',Georgia,serif; --cuerpo:'DM Sans','Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Georgia,'Segoe UI',serif;color:var(--texto);background:var(--blanco);line-height:1.6}
-h1,h2,h3{font-family:Georgia,serif;color:var(--azul);line-height:1.2}
-section{padding:56px 20px}
-.wrap{max-width:1000px;margin:auto}
-h2{font-size:1.8rem;text-align:center;margin-bottom:8px}
-.sub{text-align:center;color:#51608a;margin-bottom:32px}
-.btn{display:inline-block;padding:13px 26px;border-radius:50px;font:700 1rem 'Segoe UI',sans-serif;text-decoration:none;border:0;cursor:pointer}
-.btn-wa{background:var(--verde);color:#0f2a05}
-.btn-line{border:2px solid #fff;color:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--cuerpo);color:var(--tx);background:#fff;line-height:1.6}
+h1,h2,h3{font-family:var(--titulo);color:var(--noche);line-height:1.15}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--celeste);outline-offset:2px}
+section{padding:64px 20px}
+.wrap{max-width:1100px;margin:auto}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:8px}
+.sub{color:var(--gris);max-width:620px;margin-bottom:32px}
+.btn{display:inline-block;padding:13px 26px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn-v{background:var(--verde);color:#10260a;box-shadow:0 4px 0 var(--verde-o)}
+.btn-l{border-color:#fff;color:#fff;background:transparent}
+.btn-a{background:var(--azul);color:#fff;box-shadow:0 4px 0 var(--noche)}
 
 /* ===== Menú ===== */
-header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 10px #0b3d9e22;display:flex;align-items:center;justify-content:space-between;padding:6px 16px}
-header img{height:69px}@media(min-width:720px){header img{height:100px}}
-nav a{font:600 .9rem 'Segoe UI',sans-serif;color:var(--azul);text-decoration:none;margin-left:14px}
-nav .hide-m{display:none}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #dbe8fa;display:flex;align-items:center;gap:14px;padding:6px 16px;min-height:84px}
+.logo img{height:64px;width:auto;display:block}
+nav{margin-left:auto;display:none;gap:22px}
+nav a{font-weight:500;color:var(--noche);text-decoration:none}
+nav a:hover{color:var(--celeste)}
+.acc{margin-left:auto;display:flex;align-items:center;gap:12px}
+nav+.acc{margin-left:0}
+#cart-open{position:relative;background:none;border:0;padding:6px;color:var(--noche)}
+#cart-open svg{width:28px;height:28px}
+#cart-n{position:absolute;top:-2px;right:-4px;background:var(--rojo);color:#fff;border-radius:50%;min-width:20px;height:20px;font-size:.75rem;font-weight:700;display:grid;place-items:center}
+.pedir{background:var(--azul);color:#fff;border:0;border-radius:12px;padding:12px 20px;font-weight:700;box-shadow:0 4px 0 var(--noche)}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(160deg,var(--azul),var(--celeste));color:#fff;text-align:center;padding:70px 20px 80px}
-.hero h1{color:#fff;font-size:2.1rem;margin-bottom:14px}
-.hero p{max-width:560px;margin:0 auto 26px;opacity:.95}
-.hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero{background:var(--noche);color:#fff;position:relative;overflow:hidden;padding:56px 20px 72px}
+.hero::before{content:"";position:absolute;right:-180px;top:-120px;width:760px;height:760px;border-radius:50%;
+  background:repeating-radial-gradient(circle,transparent 0 46px,#ffffff10 46px 48px)}
+.hero .wrap{position:relative;display:grid;gap:36px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.1rem,6vw,3.6rem);margin-bottom:16px}
+.hero p{max-width:480px;opacity:.9;margin-bottom:26px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-img{position:relative;max-width:460px}
+.hero-img img{width:100%;border-radius:28px 28px 28px 120px;display:block;border:4px solid #ffffff30}
+.sello{position:absolute;top:-18px;right:-10px;width:104px;height:104px;border-radius:50%;background:var(--verde);color:#10260a;display:grid;place-content:center;text-align:center;font-weight:700;font-size:.72rem;line-height:1.2;transform:rotate(10deg);border:4px solid #fff}
+.sello b{font-family:var(--titulo);font-size:1.7rem;display:block}
 
-/* ===== Tarjetas ===== */
-.grid{display:grid;gap:18px}
-.card{background:var(--fondo);border-radius:16px;padding:24px;border:1px solid #d6e6fb}
-.card h3{margin-bottom:6px}
-.paso{text-align:center}
-.paso .n{width:46px;height:46px;border-radius:50%;background:var(--celeste);color:#fff;display:grid;place-items:center;font:700 1.2rem sans-serif;margin:0 auto 10px}
-.precio{font:700 2rem 'Segoe UI',sans-serif;color:var(--azul)}
-.precio small{font-size:.9rem;font-weight:400;color:#51608a}
-.mayo{margin-top:12px;padding:10px 12px;background:#eaf6e2;border-left:4px solid var(--verde);border-radius:8px;font:.92rem 'Segoe UI',sans-serif}
-.alt{background:var(--fondo)}
+/* ===== Beneficios ===== */
+.ben{background:var(--hielo);padding:26px 20px}
+.ben .wrap{display:grid;gap:16px;text-align:center}
+.ben b{display:block;color:var(--azul)}
+.ben span{font-size:.92rem;color:var(--gris)}
 
-/* ===== Cifras ===== */
-.cifras{background:var(--azul);color:#fff;text-align:center}
-.cifras .grid{grid-template-columns:1fr 1fr}
-.cifras b{display:block;font:700 2.2rem 'Segoe UI',sans-serif;color:var(--verde)}
+/* ===== Productos ===== */
+#productos{background:#fff}
+.grid{display:grid;gap:22px}
+.prod{border:2px solid var(--noche);border-radius:22px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 6px 0 var(--noche)}
+.prod .ft{aspect-ratio:4/5;background:url(productos.jpg) no-repeat;background-size:auto 160%;background-color:#e4eef9}
+.prod .in{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-size:1.25rem}
+.prod p{font-size:.92rem;color:var(--gris);flex:1}
+.pr{font:800 1.8rem var(--titulo);color:var(--azul)}
+.pr small{font:400 .85rem var(--cuerpo);color:var(--gris)}
+.pr.may{color:var(--verde-o)}
+.hint{font-size:.85rem;background:#edf7e6;border-left:4px solid var(--verde);padding:6px 10px;border-radius:6px}
+.hint.on{background:var(--verde);color:#10260a;font-weight:700}
+.fila{display:flex;gap:10px;margin-top:6px}
+.qty{display:flex;align-items:center;border:2px solid #cfe0f7;border-radius:12px;overflow:hidden}
+.qty button{width:36px;height:44px;border:0;background:var(--hielo);font-size:1.2rem;color:var(--noche)}
+.qty input{width:48px;border:0;text-align:center;font:700 1rem var(--cuerpo);-moz-appearance:textfield}
+.qty input::-webkit-inner-spin-button{display:none}
+.add{flex:1;border:0;border-radius:12px;background:var(--azul);color:#fff;font-weight:700;font-size:1rem;box-shadow:0 4px 0 var(--noche)}
+.add.ok{background:var(--verde-o)}
 
-/* ===== Pedido ===== */
-.pedido{max-width:460px;margin:0 auto;display:grid;gap:12px}
-.pedido select,.pedido input{padding:13px;border:1px solid #b9d3f3;border-radius:10px;font:1rem 'Segoe UI',sans-serif;width:100%}
+/* ===== Agua / historia ===== */
+.alt{background:var(--hielo)}
+.pasos{display:grid;gap:16px;margin-bottom:28px}
+.paso{background:#fff;border-radius:18px;padding:22px;border:1px solid #d6e6fb}
+.paso i{font:800 1.4rem var(--titulo);color:var(--celeste);font-style:normal}
+.fotos{display:grid;gap:14px}
+.fotos img,.eq{width:100%;border-radius:18px;display:block;object-fit:cover}
+.cert{margin-top:22px;font-weight:500}
+.cifras{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+.cifras div{background:var(--noche);color:#fff;border-radius:16px;padding:16px;text-align:center;font-size:.9rem}
+.cifras b{display:block;font:800 1.8rem var(--titulo);color:var(--verde)}
+.mv{display:grid;gap:16px}
 
-/* ===== Contacto ===== */
-.contacto{text-align:center}
-.contacto p{margin:6px 0}
+/* ===== Faja roja ===== */
+.faja{background:var(--rojo);color:#fff;padding:48px 20px}
+.faja .wrap{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.faja h2{color:#fff;margin:0}
+.faja .btn{background:#fff;color:var(--rojo);box-shadow:0 4px 0 #8e1520}
 
-footer{background:#0a2a6e;color:#cfe0ff;text-align:center;padding:20px;font:.85rem 'Segoe UI',sans-serif}
+footer{background:var(--noche);color:#cfe0ff;padding:44px 20px}
+footer .wrap{display:grid;gap:24px}
+footer h3{color:#fff;font-size:1.1rem;margin-bottom:6px}
+footer a{color:var(--verde)}
+.copy{font-size:.82rem;opacity:.7;margin-top:8px}
+
+/* ===== Carrito ===== */
+#vel{position:fixed;inset:0;background:#0a1f4d99;z-index:90;display:none}
+#vel.on{display:block}
+#cart{position:fixed;top:0;right:0;height:100%;width:100%;max-width:420px;background:#fff;z-index:95;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column}
+#cart.on{transform:none}
+.ch{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dbe8fa}
+.ch button,.cx{background:var(--hielo);border:0;border-radius:50%;width:38px;height:38px;font-size:1.2rem}
+#lines{flex:1;overflow-y:auto;padding:16px 20px}
+.vacio{text-align:center;padding:50px 10px;color:var(--gris)}
+.vacio h3{margin-bottom:8px}
+.ln{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid #e3edfb}
+.ln b{font-weight:700}.ln small{color:var(--gris);grid-column:1}
+.ln .qty{grid-column:1;justify-self:start}.ln .qty button{height:34px}
+.ln .sb{grid-row:1/3;grid-column:2;text-align:right;font-weight:700;color:var(--azul)}
+.ln .rm{grid-column:2;background:none;border:0;color:var(--rojo);font-size:.85rem;text-align:right}
+.cf{padding:16px 20px;border-top:1px solid #dbe8fa;display:none;gap:10px;flex-direction:column;background:var(--hielo)}
+.cf.on{display:flex}
+.cf input{padding:12px;border:1px solid #b9d3f3;border-radius:10px;font:1rem var(--cuerpo);width:100%}
+.tot{display:flex;justify-content:space-between;font:800 1.3rem var(--titulo)}
+.cf .btn{text-align:center;border:0;width:100%}
 
 /* ===== Chatbot ===== */
-#chat-btn{position:fixed;right:16px;bottom:16px;z-index:100;width:60px;height:60px;border-radius:50%;border:0;background:var(--celeste);color:#fff;font-size:1.7rem;cursor:pointer;box-shadow:0 6px 18px #0b3d9e66}
-#chat{position:fixed;right:12px;bottom:84px;z-index:100;width:calc(100% - 24px);max-width:370px;height:70vh;max-height:520px;background:#fff;border-radius:16px;box-shadow:0 10px 40px #0b3d9e55;display:none;flex-direction:column;overflow:hidden;font-family:'Segoe UI',sans-serif}
-#chat.open{display:flex}
-#chat-head{background:var(--azul);color:#fff;padding:12px 16px;font-weight:700}
-#chat-head small{display:block;font-weight:400;opacity:.8}
-#msgs{flex:1;overflow-y:auto;padding:12px;background:var(--fondo)}
-.m{max-width:85%;padding:10px 13px;border-radius:14px;margin-bottom:8px;font-size:.93rem;white-space:pre-line}
-.bot{background:#fff;border:1px solid #d6e6fb}
-.user{background:var(--celeste);color:#fff;margin-left:auto}
-#chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;border-top:1px solid #e1ecfa}
-#chips button{border:1px solid var(--celeste);background:#fff;color:var(--azul);border-radius:20px;padding:5px 11px;font-size:.8rem;cursor:pointer}
-#chat form{display:flex;border-top:1px solid #e1ecfa}
-#chat input{flex:1;border:0;padding:13px;font-size:.95rem;outline:none}
-#chat form button{border:0;background:var(--azul);color:#fff;padding:0 18px;cursor:pointer}
+#cb{position:fixed;right:16px;bottom:16px;z-index:80;width:64px;height:64px;border-radius:50%;border:0;background:var(--azul);box-shadow:0 5px 0 var(--noche),0 10px 24px #0b3d9e55;display:grid;place-items:center}
+#cb svg{width:30px;height:30px;fill:#fff}
+#tz{position:fixed;right:90px;bottom:26px;z-index:80;background:#fff;border-radius:16px 16px 4px 16px;box-shadow:0 6px 22px #0b3d9e33;padding:10px 14px;font-size:.85rem;max-width:210px;display:none}
+#tz b{display:block;color:var(--noche)}
+#tz.on{display:block;animation:pop .4s}
+#chat{position:fixed;right:12px;bottom:92px;z-index:85;width:calc(100% - 24px);max-width:380px;height:min(72vh,560px);background:#fff;border-radius:22px;border:2px solid var(--noche);box-shadow:0 14px 44px #0a1f4d66;display:none;flex-direction:column;overflow:hidden}
+#chat.on{display:flex;animation:pop .25s}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}}
+.cth{background:var(--azul);color:#fff;padding:12px 14px;display:flex;gap:10px;align-items:center}
+.cth img{height:42px;border-radius:8px;background:#fff}
+.cth b{font-family:var(--titulo);display:block;line-height:1.1}
+.cth small{opacity:.85}.cth small::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--verde);margin-right:5px}
+.cth button{margin-left:auto;background:#ffffff25;border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.1rem}
+#msgs{flex:1;overflow-y:auto;padding:14px;background:var(--hielo);scroll-behavior:smooth}
+.m{max-width:86%;padding:10px 14px;border-radius:18px;margin-bottom:10px;font-size:.93rem;white-space:pre-line;animation:pop .25s}
+.bot{background:#fff;border:1px solid #d6e6fb;border-bottom-left-radius:4px}
+.user{background:var(--celeste);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.typ span{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:var(--celeste);animation:bl 1s infinite}
+.typ span:nth-child(2){animation-delay:.15s}.typ span:nth-child(3){animation-delay:.3s}
+@keyframes bl{50%{opacity:.25;transform:translateY(-3px)}}
+#chips{display:flex;gap:8px;overflow-x:auto;padding:10px 12px;border-top:1px solid #dbe8fa;scrollbar-width:thin}
+#chips button{flex:none;border:1.5px solid var(--celeste);background:#fff;color:var(--azul);border-radius:20px;padding:6px 12px;font-size:.82rem;font-weight:500}
+#cf2{display:flex;border-top:1px solid #dbe8fa}
+#cf2 input{flex:1;border:0;padding:14px;font:.95rem var(--cuerpo);outline:none;min-width:0}
+#cf2 button{border:0;background:var(--azul);color:#fff;padding:0 20px;font-weight:700}
 
-img.foto{width:100%;border-radius:16px;display:block;object-fit:cover;box-shadow:0 6px 20px #0b3d9e22}
-.hero-img{max-width:420px;margin:34px auto 0;border:4px solid #fff}
-.fotos{display:grid;gap:14px;margin-top:28px}
-.mv{margin-top:24px}
-@media(min-width:720px){
-  .g2{grid-template-columns:1fr 1fr}
-  .fotos{grid-template-columns:1fr 1fr}
-  .mv{grid-template-columns:1fr 1fr}
-  .hero h1{font-size:3rem}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .cifras .grid{grid-template-columns:repeat(5,1fr)}
-  nav .hide-m{display:inline}
-  section{padding:80px 20px}
+@media(min-width:760px){
+  section{padding:88px 24px}
+  header{padding:6px 32px;min-height:96px}.logo img{height:80px}
+  nav{display:flex}
+  .hero .wrap{grid-template-columns:1.1fr .9fr}
+  .ben .wrap{grid-template-columns:repeat(3,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .pasos,.fotos,.mv{grid-template-columns:repeat(2,1fr)}
+  .pasos{grid-template-columns:repeat(3,1fr)}
+  .cifras{grid-template-columns:repeat(4,1fr)}
+  .faja .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+  footer .wrap{grid-template-columns:2fr 1fr 1fr}
 }
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
 <header>
-  <a href="#inicio"><img src="logo.jpg" alt="Logo Agua Del Páramo"></a>
+  <a class="logo" href="#inicio"><img src="logo.jpg?v=2" alt="Agua Del Páramo"></a>
   <nav>
-    <a class="hide-m" href="#agua">Nuestra agua</a>
-    <a href="#productos">Productos</a>
-    <a class="hide-m" href="#historia">Historia</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#agua">Nuestra agua</a>
+    <a href="#historia">Historia</a><a href="#contacto">Contacto</a>
   </nav>
+  <div class="acc">
+    <button id="cart-open" aria-label="Ver mi pedido">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h11l2-8H6"/></svg>
+      <span id="cart-n">0</span>
+    </button>
+    <button class="pedir" id="pedir">Pedir ahora</button>
+  </div>
 </header>
 
 <!-- ===== INICIO ===== -->
 <section class="hero" id="inicio">
   <div class="wrap">
-    <h1>Agua de mesa garantizada,<br>para vivir mejor</h1>
-    <p>Distribuimos agua Del Páramo a empresas y familias de toda Lambayeque, con entrega a domicilio sin costo adicional.</p>
-    <div class="btns">
-      <a class="btn btn-wa" href="#pedido">Hacer pedido</a>
-      <a class="btn btn-line" href="#" id="cotizar">Cotización para empresas</a>
+    <div>
+      <h1>Agua de mesa garantizada, para vivir mejor</h1>
+      <p>Distribuimos agua Del Páramo a empresas y familias de toda Lambayeque, con delivery sin costo adicional.</p>
+      <div class="btns">
+        <a class="btn btn-v" href="#productos">Ver productos</a>
+        <a class="btn btn-l" href="#" id="cotizar">Cotización para empresas</a>
+      </div>
     </div>
-    <img class="foto hero-img" src="productos.jpg" alt="Bidón, caja y botellón de agua Del Páramo">
+    <div class="hero-img">
+      <img src="productos.jpg" alt="Bidón, caja y botellón de agua Del Páramo">
+      <div class="sello"><span><b>98 %</b>de pureza</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ben"><div class="wrap">
+  <div><b>Agua ozonizada y purificada</b><span>Certificada por DIGESA</span></div>
+  <div><b>Entrega en 10 a 15 minutos</b><span>Según la zona</span></div>
+  <div><b>Delivery sin costo</b><span>Sin pedido mínimo</span></div>
+</div></div>
+
+<!-- ===== PRODUCTOS / TIENDA ===== -->
+<section id="productos">
+  <div class="wrap">
+    <h2>Elija su agua y arme su pedido</h2>
+    <p class="sub">Agregue los productos que necesite. El precio mayorista se aplica solo al llegar a la cantidad indicada.</p>
+    <div class="grid" id="grid"></div>
   </div>
 </section>
 
 <!-- ===== NUESTRA AGUA ===== -->
-<section id="agua">
+<section class="alt" id="agua">
   <div class="wrap">
-    <h2>Nuestra agua</h2>
-    <p class="sub">Agua de mesa ozonizada y purificada, con un nivel de pureza del 98 %, elaborada con un proceso técnico y riguroso.</p>
-    <div class="grid g3">
-      <div class="card paso"><div class="n">1</div><h3>Tratamiento</h3><p>Purificación y ozonización del agua. Control de calidad de pH, TDS y dureza, y almacenamiento en tanque de acero de grado alimentario.</p></div>
-      <div class="card paso"><div class="n">2</div><h3>Lavado de envases</h3><p>Prelavado, lavado interno y externo, enjuague y esterilización de cada envase antes de llenarlo.</p></div>
-      <div class="card paso"><div class="n">3</div><h3>Envasado y control</h3><p>Llenado, tapa, precinto de seguridad, fecha de producción y vencimiento, etiqueta y control final de calidad.</p></div>
+    <h2>Así se elabora nuestra agua</h2>
+    <p class="sub">Un proceso técnico y controlado, de la purificación al envasado.</p>
+    <div class="pasos">
+      <div class="paso"><i>1</i><h3>Tratamiento</h3><p>Purificación y ozonización. Control de pH, TDS y dureza; almacenamiento en tanque de acero de grado alimentario.</p></div>
+      <div class="paso"><i>2</i><h3>Lavado de envases</h3><p>Prelavado, lavado interno y externo, enjuague y esterilización antes de cada llenado.</p></div>
+      <div class="paso"><i>3</i><h3>Envasado y control</h3><p>Llenado, tapa, precinto de seguridad, fechas, etiqueta y control final de calidad.</p></div>
     </div>
     <div class="fotos">
-      <img class="foto" src="planta.jpg" alt="Planta de tratamiento de agua" loading="lazy">
-      <img class="foto" src="envasado.jpg" alt="Línea de envasado de bidones" loading="lazy">
+      <img src="planta.jpg" alt="Planta de tratamiento" loading="lazy">
+      <img src="envasado.jpg" alt="Línea de envasado" loading="lazy">
     </div>
-    <p class="sub" style="margin-top:24px">Contamos con certificación sanitaria <b>DIGESA</b> y certificados <b>BPM</b> (Buenas Prácticas de Manufactura) y <b>HS</b> (Higiene y Salubridad).</p>
-  </div>
-</section>
-
-<!-- ===== PRODUCTOS ===== -->
-<section class="alt" id="productos">
-  <div class="wrap">
-    <h2>Productos y precios</h2>
-    <p class="sub">Entrega a domicilio incluida. Sin pedido mínimo.</p>
-    <div class="grid g2">
-      <div class="card">
-        <h3>Agua en bidón de 20 L</h3>
-        <div class="precio">S/ 10 <small>c/u</small></div>
-        <p>Recarga y entrega a domicilio de bidones retornables. Ideal para el consumo diario familiar y empresarial.</p>
-        <div class="mayo"><b>Mayorista: S/ 6</b> desde 10 bidones</div>
-      </div>
-      <div class="card">
-        <h3>Agua en caja de 20 L</h3>
-        <div class="precio">S/ 20 <small>c/u</small></div>
-        <p>Alternativa sostenible que reduce el uso de plástico rígido. Válvula sellada, cómoda e higiénica.</p>
-        <div class="mayo"><b>Mayorista: S/ 18.95</b> desde 100 cajas</div>
-      </div>
-      <div class="card">
-        <h3>Botellón de 7 L</h3>
-        <div class="precio">S/ 7 <small>c/u</small></div>
-        <p>El tamaño perfecto para familias pequeñas y refrigeradoras; más ligero y fácil de manipular.</p>
-        <div class="mayo"><b>Mayorista: S/ 4</b> desde 10 botellones</div>
-      </div>
-      <div class="card">
-        <h3>Dispensadores de agua</h3>
-        <div class="precio" style="font-size:1.3rem">Alquiler o venta</div>
-        <p>Equipos de pedestal o eléctricos para facilitar el consumo en oficinas y hogares. Consulte disponibilidad y precios.</p>
-        <div class="mayo"><a href="#pedido">Solicitar información</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CIFRAS ===== -->
-<section class="cifras">
-  <div class="wrap grid">
-    <div><b>98 %</b>de pureza</div>
-    <div><b>+700</b>bidones diarios</div>
-    <div><b>2019</b>desde Pimentel</div>
-    <div><b>7</b>vehículos de reparto</div>
-    <div><b>10–15 min</b>tiempo de entrega</div>
+    <p class="cert">Con certificación sanitaria <b>DIGESA</b> y certificados <b>BPM</b> (Buenas Prácticas de Manufactura) y <b>HS</b> (Higiene y Salubridad).</p>
   </div>
 </section>
 
@@ -185,162 +246,195 @@ img.foto{width:100%;border-radius:16px;display:block;object-fit:cover;box-shadow
 <section id="historia">
   <div class="wrap">
     <h2>Nuestra historia</h2>
-    <p class="sub" style="max-width:700px;margin:0 auto 12px">Agua Del Páramo (Distribuciones del Páramo E.I.R.L.) inició operaciones el 29 de junio de 2019 en Pimentel, con 3 vehículos y una venta de 200 a 250 bidones diarios. Gracias a la promoción, a mejoras en procesos y a la renovación de equipos, hoy cuenta con 15 trabajadores, 7 vehículos y maquinaria remodelada, y comercializa entre 700 y 860 bidones al día.</p>
-    <p class="sub" style="max-width:700px;margin:auto">Atendemos a familias, bodegas, minimarkets, entidades bancarias y financieras, molineras y agroindustrias.</p>
-    <div class="grid mv">
-      <div class="card"><h3>Misión</h3><p>Proporcionar a nuestros clientes agua de la más alta calidad, siguiendo procesos y procedimientos impecables con la más alta tecnología del mercado.</p></div>
-      <div class="card"><h3>Visión</h3><p>Liderar la producción y distribución regional de agua ozonizada y purificada, brindando la máxima calidad y pureza.</p></div>
+    <p class="sub">Agua Del Páramo (Distribuciones del Páramo E.I.R.L.) inició operaciones el 29 de junio de 2019 en Pimentel, con 3 vehículos y 200 a 250 bidones diarios. Hoy cuenta con 15 trabajadores y 7 vehículos, y atiende a familias, bodegas, minimarkets, bancos, financieras, molineras y agroindustrias.</p>
+    <div class="cifras">
+      <div><b>98 %</b>de pureza</div><div><b>+700</b>bidones diarios</div>
+      <div><b>2019</b>desde Pimentel</div><div><b>10–15 min</b>de entrega</div>
     </div>
-    <div class="fotos" style="grid-template-columns:1fr;max-width:420px;margin:28px auto 0">
-      <img class="foto" src="equipo.jpg" alt="Equipo de Agua Del Páramo" loading="lazy">
+    <div class="mv">
+      <div class="paso"><h3>Misión</h3><p>Proporcionar a nuestros clientes agua de la más alta calidad, con procesos impecables y la más alta tecnología del mercado.</p></div>
+      <div class="paso"><h3>Visión</h3><p>Liderar la producción y distribución regional de agua ozonizada y purificada, con la máxima calidad y pureza.</p></div>
     </div>
+    <img class="eq" src="equipo.jpg" alt="Equipo de Agua Del Páramo" loading="lazy" style="max-width:420px;margin:28px auto 0;aspect-ratio:1">
   </div>
 </section>
 
-<!-- ===== PEDIDO POR WHATSAPP ===== -->
-<section class="alt" id="pedido">
-  <div class="wrap">
-    <h2>Haz tu pedido</h2>
-    <p class="sub">Elige producto y cantidad: se abrirá WhatsApp con tu mensaje listo.</p>
-    <div class="pedido">
-      <select id="prod">
-        <option>bidones de 20 L</option>
-        <option>cajas de agua de 20 L</option>
-        <option>botellones de 7 L</option>
-      </select>
-      <input id="cant" type="number" min="1" value="1" aria-label="Cantidad">
-      <input id="dir" type="text" placeholder="Dirección de entrega (opcional)">
-      <button class="btn btn-wa" id="enviar">Pedir por WhatsApp</button>
-    </div>
-  </div>
-</section>
+<!-- ===== FAJA ROJA ===== -->
+<div class="faja"><div class="wrap">
+  <div><h2>¿Listo para pedir?</h2><p>Arme su pedido en minutos y envíelo por WhatsApp.</p></div>
+  <button class="btn" id="faja-btn">Revisar mi pedido</button>
+</div></div>
 
 <!-- ===== CONTACTO ===== -->
-<section class="contacto" id="contacto">
+<footer id="contacto">
   <div class="wrap">
-    <h2>Contacto</h2>
-    <p><b>Teléfono / WhatsApp:</b> <a href="tel:+51997170509">+51 997 170 509</a></p>
-    <p><b>Dirección:</b> Urb. Villa Los Sauces, Mz. – Lt. 23, Pimentel</p>
-    <p><b>Horario:</b> Lunes a viernes, 8:30 a.m. a 7:00 p.m.<br>Sábados y domingos, hasta el mediodía.</p>
-    <p><b>Cobertura:</b> toda Lambayeque</p>
-    <br>
-    <a class="btn btn-wa" href="https://wa.me/51997170509" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <div><h3>Agua Del Páramo</h3><p>Agua de mesa garantizada, para vivir mejor.</p></div>
+    <div><h3>Visítenos</h3><p>Urb. Villa Los Sauces, Mz. – Lt. 23, Pimentel</p><p>Lun. a vie.: 8:30 a. m. a 7:00 p. m.<br>Sáb. y dom.: hasta el mediodía</p></div>
+    <div><h3>Hablemos</h3><p><a href="https://wa.me/51997170509" target="_blank" rel="noopener">WhatsApp +51 997 170 509</a></p><p>Cobertura: toda Lambayeque</p>
+      <!-- Redes sociales: añade aquí tus enlaces, ej.: <a href="https://facebook.com/TU_PAGINA">Facebook</a> -->
+    </div>
   </div>
-</section>
+  <div class="wrap copy">© <span id="y"></span> Distribuciones del Páramo E.I.R.L.</div>
+</footer>
 
-<footer>© <span id="y"></span> Distribuciones del Páramo E.I.R.L. · Agua Del Páramo · Agua de mesa garantizada</footer>
+<!-- ===== CARRITO ===== -->
+<div id="vel"></div>
+<aside id="cart" aria-label="Mi pedido">
+  <div class="ch"><h3>Mi pedido</h3><button id="cart-close" aria-label="Cerrar">✕</button></div>
+  <div id="lines"></div>
+  <div class="cf" id="cf">
+    <div class="tot"><span>Total</span><span id="tot">S/ 0.00</span></div>
+    <input id="nom" placeholder="Su nombre o empresa">
+    <input id="dir" placeholder="Dirección de entrega">
+    <button class="btn btn-v" id="enviar">Enviar pedido por WhatsApp</button>
+  </div>
+</aside>
 
 <!-- ===== CHATBOT ===== -->
-<button id="chat-btn" aria-label="Abrir asistente virtual">💧</button>
+<div id="tz"><b>¿En qué le ayudamos?</b>Consulte precios, horarios y pedidos.</div>
+<button id="cb" aria-label="Abrir asistente virtual"><svg viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button>
 <div id="chat" role="dialog" aria-label="Asistente virtual">
-  <div id="chat-head">Asistente Del Páramo<small>Atención virtual</small></div>
+  <div class="cth"><img src="logo.jpg?v=2" alt=""><div><b>Asistente Del Páramo</b><small>Atención en línea</small></div><button id="chat-x" aria-label="Cerrar">✕</button></div>
   <div id="msgs"></div>
   <div id="chips"></div>
-  <form id="f"><input id="q" placeholder="Escriba su consulta…" autocomplete="off"><button>Enviar</button></form>
+  <form id="cf2"><input id="q" placeholder="Escriba su consulta…" autocomplete="off"><button>Enviar</button></form>
 </div>
 
 <script>
-/* ===== CONFIGURACIÓN (edita aquí) ===== */
-const WA = "51997170509";
-
-/* ===== Pedido por WhatsApp ===== */
-function abrirWA(texto){
-  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(texto),"_blank");
-}
-document.getElementById("enviar").onclick=()=>{
-  const p=document.getElementById("prod").value;
-  const c=document.getElementById("cant").value||1;
-  const d=document.getElementById("dir").value.trim();
-  abrirWA("Hola, deseo pedir "+c+" "+p+"."+(d?" Dirección de entrega: "+d+".":""));
-};
-document.getElementById("cotizar").onclick=e=>{
-  e.preventDefault();
-  abrirWA("Hola, deseo una cotización para mi empresa.");
-};
-document.getElementById("y").textContent=new Date().getFullYear();
-
-/* ===== CHATBOT con respuestas predefinidas =====
-   Cada regla: palabras clave (sin tildes) -> respuesta.
-   Para añadir una pregunta, agrega un objeto a la lista. */
-const REGLAS=[
- {k:["demora","tarda","cuanto tiempo","rapido"],
-  r:"La entrega demora entre 10 y 15 minutos, según la zona de destino."},
- {k:["retorna","devolver","devuelvo","garantia","envase","vacio","canje","cambian","cambio"],
-  r:"El bidón es retornable y no se solicita garantía por el envase. Nosotros le entregamos el bidón; cuando termine de consumir el agua y realice un nuevo pedido, lo cambiamos por otro lleno. El precio sigue siendo S/ 10 por bidón."},
- {k:["digesa","certificado","certificacion","sanitaria","bpm","calidad","segura","higiene"],
-  r:"Contamos con certificación sanitaria de DIGESA y con los certificados BPM (Buenas Prácticas de Manufactura) y HS (Higiene y Salubridad)."},
- {k:["factura","boleta","comprobante","ruc"],
-  r:"Emitimos factura para empresas. Indíquenos sus datos al realizar el pedido."},
- {k:["pago","pagar","yape","plin","efectivo","transferencia","tarjeta"],
-  r:"Aceptamos todos los medios de pago."},
- {k:["horario","hora","atienden","abierto","abren","cierran","sabado","domingo","feriado"],
-  r:"Nuestro horario de atención es de 8:30 a.m. a 7:00 p.m. Los sábados y domingos atendemos hasta el mediodía."},
- {k:["delivery","domicilio","entrega","envio","reparto","llevan","zona","cobertura"],
-  r:"Sí, realizamos entregas a domicilio en toda Lambayeque, sin costo adicional: ya está incluido en el precio del producto."},
- {k:["minimo","minima","una sola unidad"],
-  r:"No existe pedido mínimo. Aunque sea un solo bidón, lo llevamos hasta su domicilio."},
- {k:["contrato","programada","programado","semanal","mensual","convenio","cotizacion"],
-  r:"Sí, ofrecemos contratos y entregas programadas para empresas. Escríbanos por WhatsApp y le prepararemos una cotización."},
- {k:["mayorista","mayor","volumen","descuento"],
-  r:"Contamos con precios mayoristas: bidón de 20 L a S/ 6 desde 10 unidades; caja de 20 L a S/ 18.95 desde 100 cajas; botellón de 7 L a S/ 4 desde 10 unidades."},
- {k:["precio","cuesta","costo","cuanto","tarifa","valor"],
-  r:"Nuestros precios son:\n• Bidón de 20 L: S/ 10 (mayorista S/ 6 desde 10 bidones)\n• Caja de 20 L: S/ 20 (mayorista S/ 18.95 desde 100 cajas)\n• Botellón de 7 L: S/ 7 (mayorista S/ 4 desde 10 unidades)\nEl delivery está incluido en el precio."},
- {k:["bidon","20 litros","20 l"],
-  r:"El bidón de 20 litros cuesta S/ 10 por unidad. A partir de 10 bidones, el precio mayorista es de S/ 6 cada uno."},
- {k:["caja"],
-  r:"La caja de agua de 20 litros cuesta S/ 20 por unidad (S/ 18.95 desde 100 cajas). Es una alternativa sostenible, con válvula sellada, que reduce el uso de plástico rígido."},
- {k:["botellon","7 litros","7 l"],
-  r:"El botellón de 7 litros cuesta S/ 7 por unidad. A partir de 10 botellones, el precio mayorista es de S/ 4 cada uno. Es ideal para familias pequeñas y refrigeradoras, y es fácil de manipular."},
- {k:["dispensador","pedestal","equipo"],
-  r:"Ofrecemos dispensadores de agua (de pedestal o eléctricos) en alquiler o venta, para oficinas y hogares. Para precios y disponibilidad, comuníquese por WhatsApp al +51 997 170 509."},
- {k:["tipo de agua","agua de mesa","purificacion","98","proceso","origen","ozono","ozonizada","lavado","pureza"],
-  r:"Nuestra agua de mesa es ozonizada y purificada, con un nivel de pureza del 98 %. Se controla su pH, TDS y dureza, y se almacena en tanque de acero de grado alimentario. Los envases se lavan, enjuagan y esterilizan antes de llenarse, y cada producto se sella con precinto y pasa por un control final de calidad."},
- {k:["historia","quienes son","empresa","fundada","nosotros","cuando empezaron","anos"],
-  r:"Agua Del Páramo inició operaciones el 29 de junio de 2019 en Pimentel. Hoy cuenta con 15 trabajadores y 7 vehículos, y comercializa entre 700 y 860 bidones diarios, atendiendo a familias y empresas de Lambayeque."},
- {k:["direccion","ubicacion","donde","telefono","numero","contacto","celular","whatsapp"],
-  r:"Nos encontramos en Urb. Villa Los Sauces, Mz. – Lt. 23, Pimentel. Teléfono y WhatsApp: +51 997 170 509."},
- {k:["pedido","pedir","comprar","quiero","necesito"],
-  r:"Con gusto. Puede realizar su pedido con el botón «Hacer pedido» de esta página, o escribiéndonos directamente al WhatsApp +51 997 170 509."},
- {k:["hola","buenas","buenos dias","buenas tardes","buenas noches"],
-  r:"Buenos días, es un gusto saludarle. Soy el asistente virtual de Agua Del Páramo. ¿En qué puedo ayudarle?"},
- {k:["gracias","adios","chau"],
-  r:"Ha sido un placer atenderle. Que tenga un excelente día."}
+/* ===== CONFIGURACIÓN: productos y precios (edita aquí) ===== */
+const WA="51997170509";
+const PROD=[
+ {id:"bidon",n:"Bidón de 20 L",s:"bidón de 20 L",pl:"bidones de 20 L",p:10,m:6,min:10,pos:"0% 55%",d:"Recarga y entrega a domicilio de bidones retornables. Ideal para el consumo diario familiar y empresarial."},
+ {id:"caja",n:"Agua en caja de 20 L",s:"caja de agua de 20 L",pl:"cajas de agua de 20 L",p:20,m:18.95,min:100,pos:"55% 55%",d:"Alternativa sostenible con válvula sellada, cómoda e higiénica. Reduce el uso de plástico rígido."},
+ {id:"botellon",n:"Botellón de 7 L",s:"botellón de 7 L",pl:"botellones de 7 L",p:7,m:4,min:10,pos:"100% 55%",d:"Perfecto para familias pequeñas y refrigeradoras; más ligero y fácil de manipular."}
 ];
-const POR_DEFECTO="Disculpe, no cuento con esa información. Puede consultarlo directamente con un asesor por WhatsApp: +51 997 170 509.";
-const CHIPS=["Precios","Horarios","Delivery","Envase retornable","Factura","Certificaciones","Dispensadores","Hablar con asesor"];
-
 const $=id=>document.getElementById(id);
-const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const S=n=>"S/ "+n.toFixed(2);
+const precio=(x,q)=>q>=x.min?x.m:x.p;       // precio mayorista automático
+const cart={}, sel={};                       // cart: id->cantidad | sel: cantidad elegida en cada tarjeta
+function abrirWA(t){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(t),"_blank")}
 
-function agregar(txt,quien){
-  const d=document.createElement("div");
-  d.className="m "+quien; d.textContent=txt;   // textContent evita inyección de HTML
-  $("msgs").appendChild(d); $("msgs").scrollTop=1e6;
+/* ----- Tarjetas de producto ----- */
+$("grid").innerHTML=PROD.map(x=>{sel[x.id]=1;return `
+ <article class="prod">
+  <div class="ft" style="background-position:${x.pos}" role="img" aria-label="${x.n}"></div>
+  <div class="in"><h3>${x.n}</h3><p>${x.d}</p>
+   <div class="pr" id="pr-${x.id}"></div><div class="hint" id="h-${x.id}"></div>
+   <div class="fila"><div class="qty"><button data-a="-" data-id="${x.id}" aria-label="Menos">−</button>
+    <input id="q-${x.id}" type="number" min="1" value="1" aria-label="Cantidad"><button data-a="+" data-id="${x.id}" aria-label="Más">+</button></div>
+    <button class="add" data-add="${x.id}">Agregar</button></div></div>
+ </article>`}).join("")+`
+ <article class="prod"><div class="ft" style="background-position:0% 30%;background-size:auto 260%"></div>
+  <div class="in"><h3>Dispensadores</h3><p>Equipos de pedestal o eléctricos, en alquiler o venta, para oficinas y hogares.</p>
+  <div class="pr" style="font-size:1.3rem">Consultar precio</div><div class="fila"><button class="add" id="disp">Consultar por WhatsApp</button></div></div></article>`;
+
+function pintar(x){
+  const q=sel[x.id], pu=precio(x,q), may=q>=x.min;
+  $("pr-"+x.id).innerHTML=S(pu)+" <small>c/u"+(may?" · mayorista":"")+"</small>";
+  $("pr-"+x.id).className="pr"+(may?" may":"");
+  $("h-"+x.id).className="hint"+(may?" on":"");
+  $("h-"+x.id).textContent=may?"Precio mayorista aplicado: "+S(x.m)+" c/u":"Desde "+x.min+" unidades: "+S(x.m)+" c/u";
+  $("q-"+x.id).value=q;
 }
-function responder(texto){
-  const t=norm(texto);
-  if(t.includes("asesor")||t.includes("persona")||t.includes("humano")){
-    agregar("Con gusto. Le abro WhatsApp para comunicarlo con un asesor.","bot");
-    setTimeout(()=>abrirWA("Hola, necesito atención de un asesor."),700); return;
-  }
-  const hit=REGLAS.find(x=>x.k.some(w=>t.includes(norm(w))));
-  setTimeout(()=>agregar(hit?hit.r:POR_DEFECTO,"bot"),350);
-}
-function enviar(texto){
-  if(!texto.trim())return;
-  agregar(texto,"user"); responder(texto);
-}
-CHIPS.forEach(c=>{
-  const b=document.createElement("button");
-  b.textContent=c; b.type="button"; b.onclick=()=>enviar(c);
-  $("chips").appendChild(b);
+PROD.forEach(pintar);
+$("grid").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  if(b.dataset.a){const x=PROD.find(p=>p.id===b.dataset.id);sel[x.id]=Math.max(1,sel[x.id]+(b.dataset.a==="+"?1:-1));pintar(x)}
+  if(b.dataset.add){const x=PROD.find(p=>p.id===b.dataset.add);cart[x.id]=(cart[x.id]||0)+sel[x.id];
+    b.textContent="¡Agregado!";b.classList.add("ok");setTimeout(()=>{b.textContent="Agregar";b.classList.remove("ok")},1200);dibujar()}
 });
-$("f").onsubmit=e=>{e.preventDefault();enviar($("q").value);$("q").value="";};
-$("chat-btn").onclick=()=>{
-  $("chat").classList.toggle("open");
-  if(!$("msgs").children.length)
-    agregar("Buenos días. Soy el asistente virtual de Agua Del Páramo. Puede consultarme sobre precios, horarios, entregas y más.","bot");
+$("grid").addEventListener("input",e=>{
+  if(e.target.id&&e.target.id.startsWith("q-")){const x=PROD.find(p=>"q-"+p.id===e.target.id);sel[x.id]=Math.max(1,parseInt(e.target.value)||1);pintar(x)}
+});
+$("disp").onclick=()=>abrirWA("Hola, deseo información sobre dispensadores de agua (alquiler o venta).");
+
+/* ----- Carrito ----- */
+function dibujar(){
+  let total=0,n=0,h="";
+  PROD.forEach(x=>{const q=cart[x.id]; if(!q)return; const pu=precio(x,q),sb=pu*q; total+=sb;n+=q;
+    h+=`<div class="ln"><b>${x.n}</b><span class="sb">${S(sb)}</span>
+     <small>${S(pu)} c/u${q>=x.min?" (mayorista)":""}</small>
+     <div class="qty"><button data-c="-" data-id="${x.id}">−</button><input value="${q}" readonly aria-label="Cantidad"><button data-c="+" data-id="${x.id}">+</button></div>
+     <button class="rm" data-rm="${x.id}">Quitar</button></div>`});
+  $("lines").innerHTML=n?h:`<div class="vacio"><h3>Su pedido está vacío</h3><p>Agregue bidones, cajas o botellones para empezar.</p><br><button class="btn btn-a" id="ver">Ver productos</button></div>`;
+  $("cf").classList.toggle("on",n>0); $("tot").textContent=S(total); $("cart-n").textContent=n;
+}
+$("lines").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  if(b.id==="ver"){cerrar();location.hash="#productos";return}
+  if(b.dataset.c){const id=b.dataset.id;cart[id]+=b.dataset.c==="+"?1:-1;if(cart[id]<1)delete cart[id]}
+  if(b.dataset.rm)delete cart[b.dataset.rm];
+  dibujar();
+});
+const abrir=()=>{$("cart").classList.add("on");$("vel").classList.add("on")};
+const cerrar=()=>{$("cart").classList.remove("on");$("vel").classList.remove("on")};
+["cart-open","pedir","faja-btn"].forEach(i=>$(i).onclick=abrir);
+$("cart-close").onclick=cerrar; $("vel").onclick=cerrar;
+
+/* ----- Pedido unificado por WhatsApp ----- */
+$("enviar").onclick=()=>{
+  let t="Hola, deseo realizar el siguiente pedido:\n",total=0;
+  PROD.forEach(x=>{const q=cart[x.id]; if(!q)return; const pu=precio(x,q); total+=pu*q;
+    t+="• "+q+" "+(q===1?x.s:x.pl)+" a "+S(pu)+" c/u"+(q>=x.min?" (mayorista)":"")+" = "+S(pu*q)+"\n"});
+  t+="\nTotal: "+S(total);
+  const nom=$("nom").value.trim(),dir=$("dir").value.trim();
+  if(nom)t+="\nNombre: "+nom; if(dir)t+="\nDirección: "+dir;
+  abrirWA(t);
 };
+$("cotizar").onclick=e=>{e.preventDefault();abrirWA("Hola, deseo una cotización para mi empresa.")};
+$("y").textContent=new Date().getFullYear();
+dibujar();
+
+/* ===== CHATBOT: [pregunta, palabras clave sin tildes, respuesta] =====
+   Se evalúa en orden: la primera coincidencia responde. */
+const F=[
+["¿Cuánto demora la entrega?",["demora","tarda","cuanto tiempo","rapido"],"La entrega demora entre 10 y 15 minutos, según la zona de destino."],
+["¿El bidón es retornable?",["retorna","devolver","devuelvo","garantia","envase","vacio","canje","cambian"],"Sí. No se solicita garantía por el envase. Nosotros le entregamos el bidón; cuando termine el agua y realice un nuevo pedido, lo cambiamos por otro lleno. El precio sigue siendo S/ 10."],
+["¿Tienen certificaciones sanitarias?",["digesa","certificado","certificacion","sanitaria","bpm","calidad","segura","higiene"],"Contamos con certificación sanitaria de DIGESA y con los certificados BPM (Buenas Prácticas de Manufactura) y HS (Higiene y Salubridad)."],
+["¿Emiten factura?",["factura","boleta","comprobante","ruc"],"Emitimos factura para empresas. Indíquenos sus datos al realizar el pedido."],
+["¿Qué medios de pago aceptan?",["pago","pagar","yape","plin","efectivo","transferencia","tarjeta"],"Aceptamos todos los medios de pago."],
+["¿Cuál es el horario de atención?",["horario","hora","atienden","abierto","abren","cierran","sabado","domingo","feriado"],"Atendemos de 8:30 a. m. a 7:00 p. m. Los sábados y domingos, hasta el mediodía."],
+["¿Hacen entregas a domicilio?",["delivery","domicilio","entrega","envio","reparto","llevan","zona","cobertura"],"Sí, entregamos en toda Lambayeque sin costo adicional: ya está incluido en el precio del producto."],
+["¿Hay un pedido mínimo?",["minimo","minima","una sola unidad"],"No existe pedido mínimo. Aunque sea un solo bidón, lo llevamos hasta su domicilio."],
+["¿Ofrecen contratos para empresas?",["contrato","programada","programado","semanal","mensual","convenio","cotizacion"],"Sí, ofrecemos contratos y entregas programadas para empresas. Escríbanos por WhatsApp y le preparamos una cotización."],
+["¿Cuáles son los precios mayoristas?",["mayorista","mayor","volumen","descuento"],"Precios mayoristas:\n• Bidón de 20 L: S/ 6 desde 10 unidades\n• Caja de 20 L: S/ 18.95 desde 100 cajas\n• Botellón de 7 L: S/ 4 desde 10 unidades"],
+["¿Cuáles son los precios?",["precio","cuesta","costo","cuanto","tarifa","valor"],"Nuestros precios:\n• Bidón de 20 L: S/ 10 (mayorista S/ 6 desde 10)\n• Caja de 20 L: S/ 20 (mayorista S/ 18.95 desde 100)\n• Botellón de 7 L: S/ 7 (mayorista S/ 4 desde 10)\nEl delivery está incluido."],
+["¿Cuánto cuesta el bidón de 20 L?",["bidon","20 litros","20 l"],"El bidón de 20 L cuesta S/ 10. Desde 10 bidones, S/ 6 cada uno."],
+["¿Y la caja de agua de 20 L?",["caja"],"La caja de 20 L cuesta S/ 20 (S/ 18.95 desde 100 cajas). Es sostenible y tiene válvula sellada."],
+["¿Y el botellón de 7 L?",["botellon","7 litros","7 l"],"El botellón de 7 L cuesta S/ 7. Desde 10 botellones, S/ 4 cada uno."],
+["¿Alquilan o venden dispensadores?",["dispensador","pedestal","equipo"],"Sí, ofrecemos dispensadores de pedestal o eléctricos en alquiler o venta. Consulte precios por WhatsApp: +51 997 170 509."],
+["¿Cómo es el proceso del agua?",["tipo de agua","agua de mesa","purificacion","98","proceso","origen","ozono","lavado","pureza"],"Es agua de mesa ozonizada y purificada, con 98 % de pureza. Se controlan pH, TDS y dureza; los envases se lavan y esterilizan, y cada producto se sella con precinto y control final de calidad."],
+["¿Cuál es la historia de la empresa?",["historia","quienes son","empresa","fundada","nosotros","anos"],"Agua Del Páramo inició operaciones el 29 de junio de 2019 en Pimentel. Hoy cuenta con 15 trabajadores y 7 vehículos, y vende entre 700 y 860 bidones diarios."],
+["¿Dónde están ubicados?",["direccion","ubicacion","donde","telefono","numero","contacto","celular","whatsapp"],"Urb. Villa Los Sauces, Mz. – Lt. 23, Pimentel. Teléfono y WhatsApp: +51 997 170 509."],
+["¿Cómo hago mi pedido?",["pedido","pedir","comprar","quiero","necesito"],"Agregue productos en la sección «Productos» y pulse «Pedir ahora»: su pedido completo se envía por WhatsApp. También puede escribirnos al +51 997 170 509."]
+];
+const SALUDO="Buenos días, es un gusto saludarle. Soy el asistente virtual de Agua Del Páramo. ¿En qué puedo ayudarle? Elija una pregunta o escriba su consulta.";
+const NO="Disculpe, no cuento con esa información. Puede consultarlo con un asesor por WhatsApp: +51 997 170 509.";
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+function msg(t,c){const d=document.createElement("div");d.className="m "+c;d.textContent=t;$("msgs").appendChild(d);$("msgs").scrollTop=1e6;return d}
+function bot(t,fn){                      // respuesta con indicador "escribiendo…"
+  const d=msg("","bot typ");d.innerHTML="<span></span><span></span><span></span>";
+  setTimeout(()=>{d.className="m bot";d.textContent=t;$("msgs").scrollTop=1e6;fn&&fn()},500+Math.min(t.length*7,900));
+}
+function responder(t){
+  const n=norm(t);
+  if(/asesor|persona|humano/.test(n))return bot("Con gusto. Abriré WhatsApp para comunicarle con un asesor.",()=>abrirWA("Hola, necesito atención de un asesor."));
+  const h=F.find(f=>f[1].some(w=>n.includes(w)));
+  if(h)return bot(h[2]);
+  if(/\b(hola|buenas|buenos)/.test(n))return bot(SALUDO);
+  if(/gracias|adios|chau/.test(n))return bot("Ha sido un placer atenderle. Que tenga un excelente día.");
+  bot(NO);
+}
+function enviarQ(t,r){if(!t.trim())return;msg(t,"user");r?bot(r):responder(t)}
+F.forEach(f=>{const b=document.createElement("button");b.type="button";b.textContent=f[0];b.onclick=()=>enviarQ(f[0],f[2]);$("chips").appendChild(b)});
+$("cf2").onsubmit=e=>{e.preventDefault();enviarQ($("q").value);$("q").value=""};
+let saludado=false;
+function toggleChat(v){const c=$("chat");c.classList.toggle("on",v);$("tz").classList.remove("on");
+  if(c.classList.contains("on")&&!saludado){saludado=true;bot(SALUDO)}}
+$("cb").onclick=()=>toggleChat(!$("chat").classList.contains("on"));
+$("chat-x").onclick=()=>toggleChat(false);
+setTimeout(()=>{if(!saludado)$("tz").classList.add("on")},3500);   // burbuja "¿En qué le ayudamos?"
+setTimeout(()=>$("tz").classList.remove("on"),12000);
 </script>
 </body>
 </html>
