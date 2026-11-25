@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Versión 3 -->
 <title>Agua Del Páramo | Agua de mesa en Lambayeque</title>
 <meta name="description" content="Agua de mesa ozonizada y purificada. Bidones, cajas y botellones con delivery sin costo en toda Lambayeque.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +13,7 @@
 /* ===== IDENTIDAD VISUAL (cambia colores aquí) ===== */
 :root{
   --azul:#0b3d9e; --noche:#0a1f4d; --celeste:#0a84d6; --hielo:#eef6ff;
-  --verde:#77bc4a; --verde-o:#3f7d22; --rojo:#d62839; --tx:#16264d; --gris:#5a6a8f;
+  --verde:#77bc4a; --verde-o:#3f7d22; --tx:#16264d; --gris:#5a6a8f;
   --titulo:'Fraunces',Georgia,serif; --cuerpo:'DM Sans','Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -41,7 +42,7 @@ nav a:hover{color:var(--celeste)}
 nav+.acc{margin-left:0}
 #cart-open{position:relative;background:none;border:0;padding:6px;color:var(--noche)}
 #cart-open svg{width:28px;height:28px}
-#cart-n{position:absolute;top:-2px;right:-4px;background:var(--rojo);color:#fff;border-radius:50%;min-width:20px;height:20px;font-size:.75rem;font-weight:700;display:grid;place-items:center}
+#cart-n{position:absolute;top:-2px;right:-4px;background:var(--verde-o);color:#fff;border-radius:50%;min-width:20px;height:20px;font-size:.75rem;font-weight:700;display:grid;place-items:center}
 .pedir{background:var(--azul);color:#fff;border:0;border-radius:12px;padding:12px 20px;font-weight:700;box-shadow:0 4px 0 var(--noche)}
 
 /* ===== Hero ===== */
@@ -98,10 +99,10 @@ nav+.acc{margin-left:0}
 .mv{display:grid;gap:16px}
 
 /* ===== Faja roja ===== */
-.faja{background:var(--rojo);color:#fff;padding:48px 20px}
+.faja{background:linear-gradient(160deg,var(--azul),var(--celeste));color:#fff;padding:48px 20px}
 .faja .wrap{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
 .faja h2{color:#fff;margin:0}
-.faja .btn{background:#fff;color:var(--rojo);box-shadow:0 4px 0 #8e1520}
+.faja .btn{background:#fff;color:var(--azul);box-shadow:0 4px 0 var(--noche)}
 
 footer{background:var(--noche);color:#cfe0ff;padding:44px 20px}
 footer .wrap{display:grid;gap:24px}
@@ -123,7 +124,7 @@ footer a{color:var(--verde)}
 .ln b{font-weight:700}.ln small{color:var(--gris);grid-column:1}
 .ln .qty{grid-column:1;justify-self:start}.ln .qty button{height:34px}
 .ln .sb{grid-row:1/3;grid-column:2;text-align:right;font-weight:700;color:var(--azul)}
-.ln .rm{grid-column:2;background:none;border:0;color:var(--rojo);font-size:.85rem;text-align:right}
+.ln .rm{grid-column:2;background:none;border:0;color:var(--gris);font-size:.85rem;text-align:right;text-decoration:underline}
 .cf{padding:16px 20px;border-top:1px solid #dbe8fa;display:none;gap:10px;flex-direction:column;background:var(--hielo)}
 .cf.on{display:flex}
 .cf input{padding:12px;border:1px solid #b9d3f3;border-radius:10px;font:1rem var(--cuerpo);width:100%}
@@ -259,7 +260,7 @@ footer a{color:var(--verde)}
   </div>
 </section>
 
-<!-- ===== FAJA ROJA ===== -->
+<!-- ===== FAJA DE CIERRE (azul) ===== -->
 <div class="faja"><div class="wrap">
   <div><h2>¿Listo para pedir?</h2><p>Arme su pedido en minutos y envíelo por WhatsApp.</p></div>
   <button class="btn" id="faja-btn">Revisar mi pedido</button>
@@ -324,7 +325,7 @@ $("grid").innerHTML=PROD.map(x=>{sel[x.id]=1;return `
     <input id="q-${x.id}" type="number" min="1" value="1" aria-label="Cantidad"><button data-a="+" data-id="${x.id}" aria-label="Más">+</button></div>
     <button class="add" data-add="${x.id}">Agregar</button></div></div>
  </article>`}).join("")+`
- <article class="prod"><div class="ft" style="background-position:0% 30%;background-size:auto 260%"></div>
+ <article class="prod"><div class="ft" style="background-image:url(dispensador.jpg);background-size:cover;background-position:center" role="img" aria-label="Dispensadores de agua"></div>
   <div class="in"><h3>Dispensadores</h3><p>Equipos de pedestal o eléctricos, en alquiler o venta, para oficinas y hogares.</p>
   <div class="pr" style="font-size:1.3rem">Consultar precio</div><div class="fila"><button class="add" id="disp">Consultar por WhatsApp</button></div></div></article>`;
 
